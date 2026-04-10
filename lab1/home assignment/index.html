@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Population Table</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 30px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        th {
+            background-color: red;
+            color: black;
+            font-weight: bold;
+        }
+
+        .country {
+            background-color: #ffe699;
+            font-weight: bold;
+        }
+
+        .year {
+            background-color: #9db6e8;
+        }
+
+        .population {
+            background-color: #b6d7a8;
+        }
+    </style>
+</head>
+<body>
+
+<table id="populationTable">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th colspan="2">Population (in Crores)</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    const populationData = [
+        {
+            country: "INDIA",
+            data: [
+                { year: 1998, population: 85 },
+                { year: 1999, population: 90 },
+                { year: 2000, population: 100 }
+            ]
+        },
+        {
+            country: "USA",
+            data: [
+                { year: 1998, population: 30 },
+                { year: 1999, population: 35 },
+                { year: 2000, population: 40 }
+            ]
+        },
+        {
+            country: "UK",
+            data: [
+                { year: 1998, population: 25 },
+                { year: 1999, population: 30 },
+                { year: 2000, population: 35 }
+            ]
+        }
+    ];
+
+    const tbody = document.querySelector("#populationTable tbody");
+
+    populationData.forEach(countryObj => {
+        countryObj.data.forEach((entry, index) => {
+            const row = document.createElement("tr");
+
+            if (index === 0) {
+                const countryCell = document.createElement("td");
+                countryCell.textContent = countryObj.country;
+                countryCell.className = "country";
+                countryCell.rowSpan = countryObj.data.length;
+                row.appendChild(countryCell);
+            }
+
+            const yearCell = document.createElement("td");
+            yearCell.textContent = entry.year;
+            yearCell.className = "year";
+
+            const popCell = document.createElement("td");
+            popCell.textContent = entry.population;
+            popCell.className = "population";
+
+            row.appendChild(yearCell);
+            row.appendChild(popCell);
+
+            tbody.appendChild(row);
+        });
+    });
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Calculator</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        .box { border: 1px solid #ccc; display: inline-block; padding: 20px; border-radius: 10px; }
+        input, select, button { margin: 10px; padding: 10px; width: 200px; display: block; }
+        .res { font-weight: bold; color: blue; font-size: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Basic Calculator</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="number" name="num1" placeholder="Enter First Integer" required>
+            <input type="number" name="num2" placeholder="Enter Second Integer" required>
+            
+            <select name="operation">
+                <option value="add">Addition (+)</option>
+                <option value="sub">Subtraction (-)</option>
+                <option value="mul">Multiplication (*)</option>
+                <option value="div">Division (/)</option>
+            </select>
+            
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result is not None %}
+            <div class="res">Result: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

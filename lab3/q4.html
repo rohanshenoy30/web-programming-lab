@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Class Timetable</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+  <h2 class="text-center text-primary mb-4">Class Timetable</h2>
+
+  <table class="table table-bordered table-striped table-hover text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th>Day</th>
+        <th>9:00 – 10:00</th>
+        <th>10:00 – 11:00</th>
+        <th>11:00 – 12:00</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Monday</b></td>
+        <td>Mathematics</td>
+        <td>DBMS</td>
+        <td>Operating Systems</td>
+      </tr>
+      <tr>
+        <td><b>Tuesday</b></td>
+        <td>Java</td>
+        <td>Computer Networks</td>
+        <td>Mathematics</td>
+      </tr>
+      <tr>
+        <td><b>Wednesday</b></td>
+        <td>DBMS</td>
+        <td>Java</td>
+        <td>OS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="timetableCarousel" class="carousel slide mt-5" data-ride="carousel">
+
+    <ul class="carousel-indicators">
+      <li data-target="#timetableCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#timetableCarousel" data-slide-to="1"></li>
+      <li data-target="#timetableCarousel" data-slide-to="2"></li>
+    </ul>
+
+    <div class="carousel-inner text-center">
+
+      <div class="carousel-item active">
+        <div class="bg-primary text-white p-4 rounded">
+          <h4>Monday</h4>
+          <p>Math | DBMS | OS</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="bg-success text-white p-4 rounded">
+          <h4>Tuesday</h4>
+          <p>Java | CN | Math</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="bg-warning text-dark p-4 rounded">
+          <h4>Wednesday</h4>
+          <p>DBMS | Java | OS</p>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="carousel-control-prev" href="#timetableCarousel" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#timetableCarousel" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- feedback_app/templates/feedback_app/form.html -->
+<h2>Customer Feedback Form</h2>
+<form method="post">
+    {% csrf_token %}
+    Student Name: <input type="text" name="student_name" required><br><br>
+
+    Sex: 
+    <input type="radio" name="sex" value="Male" checked> Male
+    <input type="radio" name="sex" value="Female"> Female<br><br>
+
+    Select Course: 
+    <select name="course">
+        <option>ASP-XML</option>
+        <option>DotNET</option>
+        <option>JavaPro</option>
+        <option>Unix</option>
+        <option>C</option>
+        <option>C++</option>
+    </select><br><br>
+
+    Technical Coverage:<br>
+    <input type="radio" name="coverage" value="Excellent"> Excellent
+    <input type="radio" name="coverage" value="Good"> Good
+    <input type="radio" name="coverage" value="Average"> Average
+    <input type="radio" name="coverage" value="Poor"> Poor<br><br>
+
+    Suggestions:<br>
+    <textarea name="suggestions" rows="4" cols="40"></textarea><br><br>
+
+    <button type="submit">Submit Form</button>
+</form>

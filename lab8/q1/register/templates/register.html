@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+<h2>Register Page</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <!-- Username -->
+    <label>Username:</label><br>
+    <input type="text" name="username" value="{{ data.username }}"><br>
+    <span style="color:red">{{ errors.username }}</span><br><br>
+
+    <!-- Password -->
+    <label>Password:</label><br>
+    <input type="password" name="password"><br>
+    <span style="color:red">{{ errors.password }}</span><br><br>
+
+    <!-- Email -->
+    <label>Email:</label><br>
+    <input type="text" name="email" value="{{ data.email }}"><br>
+    <span style="color:red">{{ errors.email }}</span><br><br>
+
+    <!-- Contact -->
+    <label>Contact Number:</label><br>
+    <input type="text" name="contact" value="{{ data.contact }}"><br>
+    <span style="color:red">{{ errors.contact }}</span><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

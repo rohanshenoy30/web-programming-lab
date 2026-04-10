@@ -1,0 +1,8 @@
+<!-- billing/templates/billing/bill.html -->
+<h2>Final Bill</h2>
+<p><b>Brand:</b> {{ brand }}</p>
+<p><b>Items:</b> {{ items }}</p>
+<p><b>Quantity:</b> {{ quantity }}</p>
+<hr>
+<h3>Total Amount: ${{ total }}</h3>
+<a href="{% url 'index' %}">Go Back</a>

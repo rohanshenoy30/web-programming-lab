@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Table & Image Animation</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #container {
+            position: relative;
+            left: 500px;   
+            width: fit-content;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Alternate row colors */
+        tr:nth-child(even) {
+            background-color: #d6eaff;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        img {
+            width: 150px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="moveBtn">Move Left</button>
+
+    <div id="container">
+        <table>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+            </tr>
+        </table>
+
+<img src="car.jpg" alt="car Image">
+    </div>
+
+    <script>
+        $("#moveBtn").click(function () {
+            $("#container").animate({
+                left: "0px"
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>

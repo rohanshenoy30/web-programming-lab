@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magazine Generator</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div style="display: flex; gap: 50px; padding: 40px;">
+        <!-- Form Side -->
+        <div style="flex: 1;">
+            <h2>Customize Your Cover</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Generate Cover</button>
+            </form>
+        </div>
+
+        <!-- Preview Side -->
+        <div style="flex: 1;">
+            {% if cover_data %}
+            <div class="magazine-cover" style="background-color: {{ cover_data.bg_color }}; color: {{ cover_data.font_color }};">
+                {% if cover_data.image_url %}
+                <img src="{{ cover_data.image_url }}" class="cover-bg-image">
+                {% endif %}
+                <div class="text-overlay">
+                    <h1 style="font-size: {{ cover_data.font_size }}px; margin:0;">{{ cover_data.title }}</h1>
+                    <h3 style="font-size: calc({{ cover_data.font_size }}px * 0.6);">{{ cover_data.headline }}</h3>
+                </div>
+            </div>
+            {% else %}
+                <p>Fill out the form to see your cover!</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CGPA Calculator</title>
+</head>
+<body>
+
+<h2>CGPA Calculator</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Name:</label><br>
+    <input type="text" name="name"><br><br>
+
+    <label>Total Marks (out of 500):</label><br>
+    <input type="text" name="marks"><br><br>
+
+    <button type="submit">Calculate</button>
+</form>
+
+</body>
+</html>

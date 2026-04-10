@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Employee CRUD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container mt-4">
+  <h2 class="text-center text-info">Employee Management System</h2>
+
+  <div class="form-row mb-3">
+    <div class="col">
+      <input type="text" id="empId" class="form-control" placeholder="Employee ID">
+    </div>
+    <div class="col">
+      <input type="text" id="empName" class="form-control" placeholder="Employee Name">
+    </div>
+    <div class="col">
+      <input type="text" id="empDept" class="form-control" placeholder="Department">
+    </div>
+  </div>
+
+  <button class="btn btn-primary" onclick="createEmployee()">Create</button>
+  <button class="btn btn-success" onclick="readEmployees()">Read</button>
+  <button class="btn btn-warning" onclick="updateEmployee()">Update</button>
+  <button class="btn btn-danger" onclick="deleteEmployee()">Delete</button>
+
+  <br><br>
+
+  <table class="table table-striped table-dark" id="empTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  let employees = [];
+
+  function createEmployee() {
+    let id = empId.value;
+    let name = empName.value;
+    let dept = empDept.value;
+
+    if (id === "" || name === "" || dept === "") {
+      alert("Please fill all fields");
+      return;
+    }
+
+    employees.push({ id, name, dept });
+    readEmployees();
+    clearFields();
+  }
+
+  function readEmployees() {
+    let tableBody = document.querySelector("#empTable tbody");
+    tableBody.innerHTML = "";
+
+    employees.forEach(emp => {
+      let row = `<tr>
+                  <td>${emp.id}</td>
+                  <td>${emp.name}</td>
+                  <td>${emp.dept}</td>
+                </tr>`;
+      tableBody.innerHTML += row;
+    });
+  }
+
+  function updateEmployee() {
+    let id = empId.value;
+
+    employees.forEach(emp => {
+      if (emp.id === id) {
+        emp.name = empName.value;
+        emp.dept = empDept.value;
+      }
+    });
+
+    readEmployees();
+    clearFields();
+  }
+
+  function deleteEmployee() {
+    let id = empId.value;
+    employees = employees.filter(emp => emp.id !== id);
+    readEmployees();
+    clearFields();
+  }
+
+  function clearFields() {
+    empId.value = "";
+    empName.value = "";
+    empDept.value = "";
+  }
+</script>
+
+</body>
+</html>

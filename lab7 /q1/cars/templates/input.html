@@ -1,0 +1,15 @@
+<h2>Car Selection Form</h2>
+<form action="{% url 'display_view' %}" method="POST">
+    {% csrf_token %}
+    <label>Select Manufacturer:</label>
+    <select name="manufacturer">
+        <option value="Toyota">Toyota</option>
+        <option value="Honda">Honda</option>
+        <option value="Tesla">Tesla</option>
+    </select>
+    <br><br>
+    <label>Enter Model Name:</label>
+    <input type="text" name="model_name" placeholder="e.g. Corolla" required>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>

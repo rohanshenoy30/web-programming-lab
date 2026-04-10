@@ -1,0 +1,10 @@
+<h2>Details Captured</h2>
+<label>
+    The student <b>{{ name }}</b> (Roll: {{ roll }}) 
+    selected the subject: <b>{{ subject }}</b>.
+</label>
+<br><br>
+<!-- Navigation back to first page -->
+<form action="{% url 'first_page' %}">
+    <button type="submit">Back to firstPage</button>
+</form>

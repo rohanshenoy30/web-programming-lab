@@ -1,0 +1,43 @@
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; 
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+figure {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 640px; 
+    width: 100%; 
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+figcaption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}

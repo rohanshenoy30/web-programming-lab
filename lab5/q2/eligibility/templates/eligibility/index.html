@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Promotion Eligibility</title></head>
+<body>
+    <h2>Check Promotion Eligibility</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Employee ID:</label>
+        <select name="emp_id">
+            {% for id in emp_ids %}
+                <option value="{{ id }}">{{ id }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Date of Joining:</label>
+        <input type="date" name="doj" required><br><br>
+
+        <button type="submit">Am I Eligible for Promotion</button>
+    </form>
+
+    {% if status %}
+        <br>
+        <label>Eligible: <b>{{ status }}</b></label>
+    {% endif %}
+</body>
+</html>

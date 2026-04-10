@@ -1,0 +1,20 @@
+<!-- billing/templates/billing/index.html -->
+<form action="{% url 'produce_bill' %}" method="post">
+    {% csrf_token %}
+    <h3>Select Brand:</h3>
+    <input type="radio" name="brand" value="HP" required> HP
+    <input type="radio" name="brand" value="Nokia"> Nokia
+    <input type="radio" name="brand" value="Samsung"> Samsung
+    <input type="radio" name="brand" value="Motorola"> Motorola
+    <input type="radio" name="brand" value="Apple"> Apple
+
+    <h3>Select Items:</h3>
+    <input type="checkbox" name="items" value="Mobile"> Mobile
+    <input type="checkbox" name="items" value="Laptop"> Laptop
+
+    <h3>Quantity:</h3>
+    <input type="number" name="quantity" min="1" required>
+
+    <br><br>
+    <button type="submit">Produce Bill</button>
+</form>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12 bg-primary text-white text-center p-4">
+      <h2>Bootstrap Web Page</h2>
+      <p>Lab Assignment – Q3</p>
+      <span class="badge badge-warning">Top Section</span>
+      <span class="badge badge-light text-dark">Responsive Design</span>
+    </div>
+  </div>
+
+  <div class="row mt-4 text-center">
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Login</h5>
+
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+
+          <input type="password" class="form-control" placeholder="Password">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card bg-secondary text-white shadow">
+        <div class="card-body">
+          <h5 class="card-title">Actions</h5>
+
+          <div class="btn-group">
+            <button class="btn btn-success">Save</button>
+            <button class="btn btn-warning">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+          </div>
+
+          <br><br>
+
+          <button class="btn btn-outline-light">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow">
+        <div class="card-body">
+          <h5 class="card-title text-info">Status</h5>
+
+          <p>
+            <span class="badge badge-success p-2">Active</span>
+            <span class="badge badge-danger p-2">Inactive</span>
+            <span class="badge badge-warning p-2">Pending</span>
+          </p>
+
+          <button class="btn btn-info btn-block">Check Status</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
