@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice</title>
+    </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #842020;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+    }
+
+    ul, ol {
+        margin-left: 20px;
+    }
+
+</style>
+    <body>
+        <h1>Practice</h1>
+        <p>This is the practice page.</p>
+        <ul>
+            <li> this is a sample <b>unordered</b> list element</li>
+        </ul>
+        <br>
+        <ol>
+            <li> this is a sample <i>ordered </i> list element</li>
+        </ol>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Rohan</td>
+        <td>20</td>
+    </tr>
+</table>
+
+<br>
+<br>
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+    Name: <input type="text" name="name"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    
+    Gender:
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female<br><br>
+    
+    <input type="submit">
+</form>
+
+
+    </body>
+</html>

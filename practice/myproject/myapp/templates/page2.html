@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        form {
+            border: 2px solid black;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Student Details for {{name}} {{password}}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    Age: <input type="number"><br><br>
+    Course: <input type="text"><br><br>
+    
+    <input type="submit">
+</form>
+
+</body>
+</html>
