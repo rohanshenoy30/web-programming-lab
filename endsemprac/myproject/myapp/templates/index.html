@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TITLE PAGE</title>
+    FIRST PAGE
+</head>
+
+<style>
+
+body{
+
+background-color: grey;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: brown;
+
+}
+
+</style>
+
+<p>
+    hello world this is an example
+</p>
+
+<table border="2">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+     <tr>
+        <td>rohan</td>
+        <td>21</td>
+    </tr>
+</table>
+
+<br>
+
+<form method="POST">
+{% csrf_token %}
+Name:<input type="text" name="name">
+<br><br>
+Age<input type="text" name="age">
+<br>
+<input type="submit">
+
+<a href="/third">go to third page</a>
+<br>
+<a href="/fourth">go to fourth page</a>
+
+</form>
+
+
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    this is the first html page
+</head>
+
+<style>
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: grey;
+    text-align: center;
+}
+p{
+    background-color: blue;
+}
+</style>
+<br>
+
+<p>hello world this is sample</p>
+
+
+<form method="POST">
+{% csrf_token %}
+<br>
+    NAME:<input type="text" name="name">
+<br>
+AGE:<input type="number" name="age">
+<br>
+GENDER:<input type="text" name="gender">
+
+<input type="submit">
+
+
+</form>
+
+<a href="second/">link to the second html</a>
+<br>
+<a href="third/">link to the third html</a>
+
+</html>
